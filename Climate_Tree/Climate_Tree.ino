@@ -36,8 +36,8 @@ Graphics_API display(LCD_CS, LCD_DC, LCD_MOSI, LCD_SCLK, LCD_RST);
 //DHT11_API dht11(D#);
 //Light_Sensor_API light(A#);
 //Ph_Sensor_API ph(A#);
-//Water_Level_Sensor waterlevel(D#, false);
-//Water_Level_Sensor waterlevel(A#, true);
+//Water_Level_Sensor_API waterlevel(D#, false);
+//Water_Level_Sensor_API waterlevel(A#, true);
 //Moisture_Sensor_API moisture(A#);
 //HTU21D_API htu21d;
 
@@ -71,6 +71,6 @@ void loop() {
   lora.Send_Data(data1, data2, data3, data4, data5, data6);
   display.UpdateGraph(data1, data2, data3, data4, data5, data6);
   
-  delay(5000);
+  delay(5000); //time in milliseconds
 
 }
