@@ -38,6 +38,7 @@ Graphics_API display(LCD_CS, LCD_DC, LCD_MOSI, LCD_SCLK, LCD_RST);
 //Ph_Sensor_API ph(A#);
 //Water_Level_Sensor waterlevel(D#, false);
 //Water_Level_Sensor waterlevel(A#, true);
+//Moisture_Sensor_API moisture(A#);
 //HTU21D_API htu21d;
 
 void setup() {
