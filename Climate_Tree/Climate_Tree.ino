@@ -64,7 +64,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   
-  float data1 = NOT_BEING_USED.ReadAmbience();
+  float data1 = NOT_BEING_USED;
   float data2 = NOT_BEING_USED;
   float data3 = NOT_BEING_USED;
   float data4 = NOT_BEING_USED;
