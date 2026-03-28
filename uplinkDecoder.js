@@ -17,10 +17,10 @@ function decodeUplink(input) {
 
   return {
     data: {
-      soilMoisture: readUInt16BE(1), // bytes 1–2
-      temperature:  readUInt16BE(3), // bytes 3–4
-      humidity:     readUInt16BE(5), // bytes 5–6
-      ph:           readUInt16BE(7)  // bytes 7–8
+      DATA_1: readUInt16BE(1), // bytes 1–2
+      DATA_2:  readUInt16BE(3), // bytes 3–4
+      DATA_3:     readUInt16BE(5), // bytes 5–6
+      DATA_4:           readUInt16BE(7)  // bytes 7–8
     },
     warnings: [],
     errors: []
