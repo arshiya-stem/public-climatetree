@@ -8,9 +8,13 @@ void DHT11_API::Initialize() {
 }
 
 float DHT11_API::ReadTemperature() {
-  return sensor.readTemperature();
+  float temperature = sensor.readTemperature();
+  Serial.println("Temperature (DHT11): " + (String)temperature + " C");
+  return temperature;
 }
 
 float DHT11_API::ReadHumidity() {
-  return sensor.readHumidity();
+  float humidity = sensor.readHumidity();
+  Serial.println("Humidity (DHT20): " + (String)humidity + " %");
+  return humidity;
 }

@@ -7,9 +7,13 @@ void HTU21D_API::Initialize() {
 }
 
 float HTU21D_API::ReadTemperature() {
-  return sensor.readTemperature();
+  float temperature = sensor.readTemperature();
+  Serial.println("Temperature (HTU21D): " + (String)temperature + " C");
+  return temperature;
 }
 
 float HTU21D_API::ReadHumidity() {
-  return sensor.readHumidity();
+  float humidity = sensor.readHumidity();
+  Serial.println("Humidity (HTU21D): " + (String)humidity + " %");
+  return humidity;
 }

@@ -12,9 +12,12 @@
 #include "Ph_Sensor_API.h"
 #include "Water_Level_Sensor_API.h"
 #include "HTU21D_API.h"
+#include "BME280_API.h"
+//#include "Thermocouple_Sensor_API.h"
 #include "Graphics_API.h"
 
 #define NOT_BEING_USED 255
+#define SECOND_TO_MILLISECOND 1000
 
 ///@brief Pins
 #define D0 14
@@ -28,7 +31,7 @@
 #define LCD_RST 22
 
 
-LORA_API lora("devEUI", "appeEUI", "appKey");    // <-- replace parameters with TTN info
+LORA_API lora("devEUI", "appEUI", "appKey");    // <-- replace parameters with TTN info
 Graphics_API display(LCD_CS, LCD_DC, LCD_MOSI, LCD_SCLK, LCD_RST);
 
 //DSB1820_API ds18b20(D#);
@@ -40,6 +43,8 @@ Graphics_API display(LCD_CS, LCD_DC, LCD_MOSI, LCD_SCLK, LCD_RST);
 //Water_Level_Sensor_API waterlevel(A#, true);
 //Moisture_Sensor_API moisture(A#);
 //HTU21D_API htu21d;
+//BME280_API bme280;
+//Thermocouple_Sensor_API thermocouple;
 
 void setup() {
   // put your setup code here, to run once:
@@ -58,6 +63,7 @@ void setup() {
   //dht20.Initialize();
   //dht11.Initialize();
   //htu21d.Initialize();
+  //bme280.Initialize();
 
 }
 
@@ -69,14 +75,9 @@ void loop() {
   float data3 = NOT_BEING_USED;
   float data4 = NOT_BEING_USED;
 
-  Serial.println("data1: " + (String)data1);
-  Serial.println("data2: " + (String)data2);
-  Serial.println("data3: " + (String)data3);
-  Serial.println("data4: " + (String)data4);
-
   lora.Send_Data(data1, data2, data3, data4);
   display.UpdateGraph(data1, data2, data3, data4);
   
-  delay(5000); //time in milliseconds
+  delay(5 * SECOND_TO_MILLISECOND); //time in milliseconds
 
 }

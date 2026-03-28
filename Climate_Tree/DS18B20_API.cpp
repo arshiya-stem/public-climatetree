@@ -20,6 +20,8 @@ void DS18B20_API::Initialize() {
 }
 
 float DS18B20_API::ReadTemperature() {
-  return sensor.readTemperature(sensor_addr);
+  float temperature = sensor.readTemperature(sensor_addr);
+  Serial.println("Temperature (DS18B20): " + (String)temperature + " C");
+  return temperature;
 }
 

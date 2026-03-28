@@ -7,9 +7,13 @@ void DHT20_API::Initialize() {
 }
 
 float DHT20_API::ReadTemperature() {
-  return sensor.getTemperature();
+  float temperature = sensor.getTemperature();
+  Serial.println("Temperature (DHT20): " + (String)temperature + " C");
+  return temperature;
 }
 
 float DHT20_API::ReadHumidity() {
-  return sensor.getHumidity();
+  float humidity = sensor.getHumidity();
+  Serial.println("Humidity (DHT20): " + (String)humidity + " %");
+  return humidity; 
 }
